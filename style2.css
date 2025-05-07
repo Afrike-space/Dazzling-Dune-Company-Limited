@@ -1,0 +1,211 @@
+html {
+    scroll-behavior: smooth;
+  
+  }
+  
+  body {
+    justify-content: center; /* Centers content vertically if needed */
+    align-items: center; /* Centers content horizontally */
+    text-align: center; /* Keeps text centered */
+    background-color:beige; 
+    font-family: 'Poppins', sans-serif;
+    overflow-y:hidden;
+    overflow-x: hidden;
+    margin: 0; 
+    min-height: 100vh; /* Ensures full height on all screens */
+  }
+/* Base Styles */
+.menu {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 120px;
+    margin-left: 0%;
+}
+
+.home {
+    width: 15%;
+    height: 99px;
+    background-color: transparent;
+    margin-top: 1px;
+    margin-left: 0px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.home img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.about, .services, .contact {
+    width: 10%; /* Make sure all have the same width */
+    height: 50px;
+    background-color: brown;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    position: relative; /* Added for dropdown positioning */
+}
+
+.about:hover,
+.vision:hover,
+.mission:hover,
+.services:hover,
+.contact:hover {
+    background-color: purple;
+    cursor: pointer;
+}
+
+.Home
+{
+    width: 100%; /* Make sure all have the same width */
+    height: 50px; 
+    background-color: brown;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 16px;
+font-weight: bold;
+border-radius: 5px;
+transition: background-color 0.3s;
+margin-top: 0px;
+position: relative; /* Added for dropdown positioning */
+}
+
+.menu a {
+    display: inline-block; /* or block */
+}
+
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative; /* Position relative for dropdown */
+    width: 10%; /* Make sure all have the same width */
+    height: 50px;
+    background-color: brown;
+    margin-top: 20px;
+    margin-left: 0;
+    border-radius: 5px;
+}
+
+.Home-content {
+    display: none; /* Hidden by default */
+    position: absolute; /* Positioning dropdown */
+    background-color:beige; /* Background color */
+    min-width: 160px; /* Minimum width */
+    z-index: 1; /* Ensure it appears above other elements */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 5px;
+    gap:0px;
+}
+
+.Home-content div {
+    color: purple; /* Text color */
+    padding: 12px 16px; /* Padding */
+    text-align: center; /* Center text */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-style:none;
+    margin-bottom: 5px;
+    background-color: gray;
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold;
+}
+
+.Home-content div:hover {
+    background-color:rgb(251, 152, 210); /* Change color on hover */
+}
+
+.dropdown:hover .Home-content {
+    display: block; /* Show dropdown on hover */
+}
+
+.frontier {
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    margin-top: 0px;
+}
+
+.frontier img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+/* Media Queries */
+
+/* For screens smaller than 1200px */
+@media (max-width: 1200px) {
+    .home {
+        width: 20%; /* Increase width for smaller screens */
+    }
+
+    .about, .vision, .mission, .services, .contact {
+        width: 15%; /* Increase section width */
+        font-size: 14px; /* Decrease font size */
+    }
+
+    .menu {
+        gap: 40px; /* Reduce gap between menu items */
+    }
+}
+
+/* For screens smaller than 992px */
+@media (max-width: 992px) {
+    .home {
+        width: 25%; /* Further increase width for smaller screens */
+    }
+
+    .about, .vision, .mission, .services, .contact {
+        width: 20%; /* Further increase section width */
+    }
+
+    .menu {
+        gap: 20px; /* Further reduce gap */
+    }
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column; /* Stack menu items vertically */
+        height: auto; /* Allow height to adjust */
+        gap: 10px; /* Reduce gap */
+    }
+
+    .home {
+        width: 100%; /* Full width for home element */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .about, .vision, .mission, .services, .contact {
+        width: 100%; /* Full width for sections */
+        height: auto; /* Allow height to adjust */
+        font-size: 12px; /* Decrease font size further */
+    }
+}
+
+/* For screens smaller than 576px */
+@media (max-width: 576px) {
+    .home {
+        height: 70px; /* Reduce height for smaller screens */
+    }
+
+    .about, .vision, .mission, .services, .contact {
+        height: 40px; /* Reduce height for sections */
+    }
+}

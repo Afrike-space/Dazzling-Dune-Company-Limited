@@ -9,139 +9,317 @@ html {
     text-align: center; /* Keeps text centered */
     background-color:beige; 
     font-family: 'Poppins', sans-serif;
-    overflow-y:hidden;
     overflow-x: hidden;
     margin: 0; 
     min-height: 100vh; /* Ensures full height on all screens */
   }
-
-  /* Base Styles */
-.menu {
+  .menu {
     position: relative;
-    width: 100%;
-    height: 100px;
-    background-color: transparent;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    align-items: center;
     justify-content: flex-start;
-    gap: 80px;
-    margin-left: 0%;
-}
-
-.home {
-    width: 15%;
-    height: 99px;
     background-color: transparent;
-    margin-top: 1px;
-    margin-left: 0px;
     padding: 0;
-    overflow: hidden;
+    width: 100%;
+    height: 70px;
 }
 
-.home img {
+.Logo {
+    width: 13%;
+    height: 70px;
+    background-color: transparent;
+}
+
+.Logo img {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: fill; 
 }
 
-.about, .vision, .mission, .services, .contact {
+.list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 1px;
+    justify-content: space-between; /* Adjust spacing */
+    width: 100%;
+    background-color: transparent;
+    height: auto; /* Auto height */
+}
+
+.Sublist {
+    position: relative;
     width: 10%;
     height: 50px;
-    background-color: brown;
-    color: white;
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    color: purple;
     font-weight: bold;
-    border-radius: 5px;
+    cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 20px;
+    border-radius: 5px;
+    margin-top: 8px;
+    font-size: 20px;
 }
 
-.about:hover,
-.vision:hover,
-.mission:hover,
-.services:hover,
-.contact:hover {
-    background-color: purple;
-    cursor: pointer;
+.Sublist:hover {
+    background-color: darkred;
 }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .Logo {
+        width: 30%;
+    }
+
+    .Sublist {
+        width: 20%;
+        font-size: 16px;
+    }
+
+    .menu {
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .Logo {
+        width: 50%;
+    }
+
+    .Sublist {
+        width: 40%;
+        font-size: 14px;
+    }
+
+    .list {
+        flex-direction: column; /* Stack items */
+        align-items: center; /* Center items */
+    }
+}
+
+.menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Spread items across */
+    background-color: transparent;
+    padding: 0 1rem; /* Horizontal padding */
+    width: 100%;
+    height: 70px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.Logo {
+    width: 13%; /* Logo width */
+    height: 70px; /* Logo height */
+    background-color: transparent; /* Background color for the logo area */
+}
+
+.Logo img {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit:fill; /* Maintain aspect ratio */
+}
+
+
+/* Navigation list container */
+.list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    flex: 1;
+}
+
+/* Each menu item */
+.Sublist {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: purple;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.Sublist:hover {
+    background-color: darkred;
+    color: white;
+}
+
+/* ==========================
+   RESPONSIVE MEDIA QUERIES
+   ========================== */
+
+/* Tablet view */
+@media screen and (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .list {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .Sublist {
+        width: 100%;
+        font-size: 1rem;
+        justify-content: flex-start;
+    }
+}
+
+/* Mobile view */
+@media screen and (max-width: 480px) {
+    .Logo img {
+        height: 50px;
+    }
+
+    .Sublist {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+
+
 
 .frontier {
     width: 100%;
-    height: 100vh;
-    background-color: transparent;
+    height: 70vh;
+    background-color: green;
     margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent image overflow on small screens */
 }
 
 .frontier img {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: fill; /* Maintains aspect ratio and covers the area */
 }
 
-/* Media Queries */
-
-/* For screens smaller than 1200px */
-@media (max-width: 1200px) {
-    .home {
-        width: 20%; /* Increase width for smaller screens */
-    }
-
-    .about, .vision, .mission, .services, .contact {
-        width: 15%; /* Increase section width */
-        font-size: 14px; /* Decrease font size */
-    }
-
-    .menu {
-        gap: 40px; /* Reduce gap between menu items */
+/* Optional tweaks for small screens */
+@media screen and (max-width: 768px) {
+    .frontier {
+        height: 50vh; /* Slightly shorter for tablets */
     }
 }
 
-/* For screens smaller than 992px */
-@media (max-width: 992px) {
-    .home {
-        width: 25%; /* Further increase width for smaller screens */
-    }
-
-    .about, .vision, .mission, .services, .contact {
-        width: 20%; /* Further increase section width */
-    }
-
-    .menu {
-        gap: 20px; /* Further reduce gap */
+@media screen and (max-width: 480px) {
+    .frontier {
+        height: 40vh; /* More compact for phones */
     }
 }
 
-/* For screens smaller than 768px */
-@media (max-width: 768px) {
-    .menu {
-        flex-direction: column; /* Stack menu items vertically */
-        height: auto; /* Allow height to adjust */
-        gap: 10px; /* Reduce gap */
-    }
 
-    .home {
-        width: 100%; /* Full width for home element */
-        height: auto; /* Allow height to adjust */
-    }
+.about {
+    width: 100%;
+    background-color: transparent;
+    margin-bottom: 1rem;
+    padding: 1rem; /* Add breathing room on all devices */
+    border-top: 1px solid #ddd; /* Subtle separator if desired */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    .about, .vision, .mission, .services, .contact {
-        width: 100%; /* Full width for sections */
-        height: auto; /* Allow height to adjust */
-        font-size: 12px; /* Decrease font size further */
+.about h3 {
+    font-size: 2rem; /* Responsive base unit */
+    font-weight: bold;
+    margin: 1rem 0 0.5rem;
+    color: purple;
+    text-align: center;
+}
+
+.Description {
+    width: 100%;
+    max-width: 800px; /* Prevents overly wide text blocks */
+    padding: 0 1rem;
+    background-color: transparent;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .about h3 {
+        font-size: 1.5rem;
     }
 }
 
-/* For screens smaller than 576px */
-@media (max-width: 576px) {
-    .home {
-        height: 70px; /* Reduce height for smaller screens */
-    }
-
-    .about, .vision, .mission, .services, .contact {
-        height: 40px; /* Reduce height for sections */
+@media screen and (max-width: 480px) {
+    .about h3 {
+        font-size: 1.25rem;
     }
 }
+.contact {
+    width: 100%;
+    padding: 1rem 0;
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contactt {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    max-width: 90%;
+}
+
+.contactt img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.contactt label {
+    font-weight: bold;
+    margin: 0;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.contact a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Optional: Responsive tweaks */
+@media screen and (max-width: 600px) {
+    .contactt {
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .contactt label {
+        font-size: 0.9rem;
+    }
+}
+
