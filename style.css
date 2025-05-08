@@ -3,7 +3,7 @@ html {
   
   }
   
-  body {
+  .body {
     justify-content: center; /* Centers content vertically if needed */
     align-items: center; /* Centers content horizontally */
     text-align: center; /* Keeps text centered */
@@ -13,19 +13,26 @@ html {
     margin: 0; 
     min-height: 100vh; /* Ensures full height on all screens */
   }
-  .menu {
+
+  
+/* MAIN MENU CONTAINER */
+.menu {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     background-color: transparent;
-    padding: 0;
+    padding: 0 0rem;
     width: 100%;
-    height: 70px;
+    min-height: 70px; /* Minimum height for the menu */
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
+/* LOGO */
 .Logo {
     width: 13%;
+    min-width: 80px;
     height: 70px;
     background-color: transparent;
 }
@@ -33,174 +40,108 @@ html {
 .Logo img {
     width: 100%;
     height: 100%;
-    object-fit: fill; 
+    object-fit: fill; /* Prevent distortion */
 }
 
-.list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; /* Allow wrapping */
-    gap: 1px;
-    justify-content: space-between; /* Adjust spacing */
-    width: 100%;
-    background-color: transparent;
-    height: auto; /* Auto height */
-}
-
-.Sublist {
-    position: relative;
-    width: 10%;
-    height: 50px;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: purple;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border-radius: 5px;
-    margin-top: 8px;
-    font-size: 20px;
-}
-
-.Sublist:hover {
-    background-color: darkred;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .Logo {
-        width: 30%;
-    }
-
-    .Sublist {
-        width: 20%;
-        font-size: 16px;
-    }
-
-    .menu {
-        height: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .Logo {
-        width: 50%;
-    }
-
-    .Sublist {
-        width: 40%;
-        font-size: 14px;
-    }
-
-    .list {
-        flex-direction: column; /* Stack items */
-        align-items: center; /* Center items */
-    }
-}
-
-.menu {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Spread items across */
-    background-color: transparent;
-    padding: 0 1rem; /* Horizontal padding */
-    width: 100%;
-    height: 70px;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-}
-
-.Logo {
-    width: 13%; /* Logo width */
-    height: 70px; /* Logo height */
-    background-color: transparent; /* Background color for the logo area */
-}
-
-.Logo img {
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    object-fit:fill; /* Maintain aspect ratio */
-}
-
-
-/* Navigation list container */
+/* NAVIGATION LIST CONTAINER */
 .list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 10px;
     justify-content: center;
     align-items: center;
+    gap: 50px 100px;
     background-color: transparent;
-    flex: 1;
+    flex: 1; /* Allows the .list to take remaining space */
+    margin-top: 0px;
+    height: 100%; /* Makes sure it fills the parent's height */
 }
 
-/* Each menu item */
+/* INDIVIDUAL NAV ITEM */
 .Sublist {
-    padding: 0.5rem 1rem;
-    background-color: transparent;
-    color: purple;
+    position: relative;
+    flex: 1 1 120px;
+    max-width: 150px;
+    min-height: 40px;
+    background-color: purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
     font-weight: bold;
-    font-size: 1rem;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+    margin-top: 1px;
+    font-size: 20px;
 }
 
+/* HOVER EFFECT */
 .Sublist:hover {
     background-color: darkred;
     color: white;
 }
 
-/* ==========================
-   RESPONSIVE MEDIA QUERIES
-   ========================== */
-
-/* Tablet view */
-@media screen and (max-width: 768px) {
-    .menu {
-        flex-direction: column;
-        height: auto;
-        align-items: flex-start;
-        padding: 1rem;
-    }
-
-    .list {
-        flex-direction: column;
-        width: 100%;
-        gap: 0.5rem;
-        margin-top: 1rem;
-    }
-
-    .Sublist {
-        width: 100%;
-        font-size: 1rem;
-        justify-content: flex-start;
-    }
+/* COLOR CUSTOMIZATION */
+.menu-home {
+    background-color: orange;
 }
 
-/* Mobile view */
-@media screen and (max-width: 480px) {
-    .Logo img {
-        height: 50px;
-    }
-
-    .Sublist {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
-    }
+.menu-about {
+    background-color: lightblue;
 }
 
+.menu-services {
+    background-color: lightgreen;
+}
 
+.menu-contact {
+    background-color: pink;
+}
+
+/* DROPDOWN WRAPPER */
+.has-dropdown {
+    position: relative; /* So dropdown is anchored correctly */
+}
+
+/* DROPDOWN MENU */
+.has-dropdown .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    background-color: orange;
+    width: 150px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* SHOW DROPDOWN ON HOVER */
+.has-dropdown:hover .dropdown {
+    display: flex;
+}
+
+/* DROPDOWN ITEM */
+.dropdown-item {
+    padding: 10px;
+    font-size: 16px;
+    color: purple;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-item:hover {
+    background-color: darkred;
+    color: white;
+}
 
 
 .frontier {
     width: 100%;
     height: 70vh;
-    background-color: green;
+    background-color: transparent;
     margin-top: 0px;
     display: flex;
     justify-content: center;
@@ -248,78 +189,322 @@ html {
 }
 
 .Description {
-    width: 100%;
-    max-width: 800px; /* Prevents overly wide text blocks */
-    padding: 0 1rem;
     background-color: transparent;
-    font-size: 1rem;
-    line-height: 1.6;
-    text-align: center;
     margin: 0 auto;
+    max-width: 800px;
+    padding: 1rem;
+    text-align: center; /* centers inline content like text and inline-blocks */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers child block elements horizontally */
+    gap: 1.5rem; /* adds spacing between items */
 }
 
-@media screen and (max-width: 768px) {
-    .about h3 {
-        font-size: 1.5rem;
-    }
+
+.Description .service-block {
+    margin-top: 2rem;
 }
 
-@media screen and (max-width: 480px) {
-    .about h3 {
-        font-size: 1.25rem;
-    }
+.Description .service-block h4 {
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #333;
 }
+
+.Description .service-block p {
+    margin: 0;
+}
+
+.Description .closing {
+    margin-top: 2rem;
+    font-style: italic;
+    color: #444;
+}
+
+
+.Description .service-block ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    text-align: left;
+    margin: 1rem 0 0;
+}
+
+.Description .service-block ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    line-height: 1.6;
+}
+
+.Description .closing {
+    margin-top: 2rem;
+    font-style: italic;
+    color: #444;
+    font-size: 1.8rem;
+    max-width: 700px;
+}
+
 .contact {
     width: 100%;
-    padding: 1rem 0;
+    height: 50px;
+    padding: 0rem 0;
     background-color: transparent;
     display: flex;
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 10rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 .contactt {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.8rem; /* Adjusted gap for better spacing */
     background-color: transparent;
-    padding: 0.5rem 1rem;
     border-radius: 8px;
-    max-width: 90%;
+    max-width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added subtle shadow for depth */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
 }
 
 .contactt img {
-    width: 30px;
-    height: 30px;
+    width: 35px; /* Slightly bigger icons for better visibility */
+    height: 35px;
     border-radius: 50%;
     object-fit: cover;
+
 }
 
 .contactt label {
     font-weight: bold;
     margin: 0;
-    font-size: 1rem;
+font-size: 1.8rem;
     white-space: nowrap;
+    color: #333; /* Dark color for contrast */
 }
 
 .contact a {
     text-decoration: none;
     color: inherit;
+
 }
 
-/* Optional: Responsive tweaks */
-@media screen and (max-width: 600px) {
-    .contactt {
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px)
+ 
+{
+
+    .menu {
+        display: flex;
+        background-color:transparent;
+        flex-direction: column; /* Optional, if needed for vertical stacking of menu sections */
+        height:8vh; 
+    }
+
+    .Logo
+    {
+        display: none;
+    }
+
+    .list {
+        width:100%;
+        height:5vh;  
+        display: flex;
         flex-direction: row;
-        justify-content: flex-start;
-        width: 100%;
+        flex-wrap: nowrap; /* Prevent wrapping */
+        background-color:transparent;
+        overflow-x:none; /* Enables horizontal scroll if items overflow */
+        overflow-y:none; /* Enables horizontal scroll if items overflow */
+        gap: 35px;
+  
     }
 
-    .contactt label {
-        font-size: 0.9rem;
+    .Sublist {
+        flex: 0 0 auto; /* Prevents shrinking and allows horizontal scroll */
+        width: 20vw;     /* Proportional width (adjust as needed) */
+        height:4vh;    /* Proportional height */
+        min-width: 100px;
+        min-height: 10px;
+        box-sizing: border-box;
+        background-color:purple;
     }
+
+    .about
+    {
+        background-color:transparent;
+    }
+
+    .about h3
+{
+    font-weight: bold;
+    font-size: 20px;
 }
 
+.Description
+{
+    background-color:transparent;
+}
+
+.contact
+{
+    background-color:transparent;
+gap:25px;
+ justify-content: flex-start;   
+ flex-wrap: nowrap;
+ width:100%;
+}
+
+.contactt
+{
+    background-color:transparent;
+    padding: 0px;
+    margin-left: 40px;
+}
+
+.contactt label
+ {
+    font-size: 1.5rem; /* Slightly larger font for better readability */
+}
+
+}
+
+@media screen and (max-width: 600px)
+ {
+    .menu {
+        display: flex;
+        background-color:transparent;
+        flex-direction: column; /* Optional, if needed for vertical stacking of menu sections */
+        height:8vh; 
+    }
+
+    .list {
+        width:100%;
+        height:5vh;  
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; /* Prevent wrapping */
+        gap: 20px;
+  
+    }
+
+    .Sublist {
+        flex: 0 0 auto; /* Prevents shrinking and allows horizontal scroll */
+        width: 20vw;     /* Proportional width (adjust as needed) */
+        height:4vh;    /* Proportional height */
+        min-width: 100px;
+        min-height: 10px;
+        background-color:purple;
+    }
+
+
+    .about
+    {
+        background-color:transparent;
+    }
+
+    .about h3
+{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.Description
+{
+    background-color:transparent;
+}
+
+.contact
+{
+    background-color:transparent;
+gap:10px;
+ justify-content: flex-start;   
+ flex-wrap: nowrap;
+ width: 99%;
+}
+
+.contactt
+{
+    background-color:transparent;
+    padding: 0px;
+    margin-left: 5px;
+}
+
+.contactt label
+ {
+    font-size: 1.4rem; /* Slightly larger font for better readability */
+}
+
+}
+
+@media (max-width: 480px)
+
+{
+
+    .menu {
+        display: flex;
+        background-color:transparent;
+        flex-direction: column; /* Optional, if needed for vertical stacking of menu sections */
+        height:8vh; 
+    }
+
+    .list {
+        width:100%;
+        height:5vh;  
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; /* Prevent wrapping */
+        gap: 15px;
+  
+    }
+
+    .Sublist {
+        flex: 0 0 auto; /* Prevents shrinking and allows horizontal scroll */
+        width: 20vw;     /* Proportional width (adjust as needed) */
+        height:4vh;    /* Proportional height */
+        min-width: 100px;
+        min-height: 10px;
+        background-color:purple;
+    }
+
+
+    .about
+    {
+        background-color:transparent;
+    }
+
+    .about h3
+{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.Description
+{
+    background-color:transparent;
+}
+
+.contact
+{
+    background-color:transparent;
+gap:2px;
+ justify-content: flex-start;   
+ flex-wrap: nowrap;
+ width: 99%;
+}
+
+.contactt
+{
+    background-color:purple;
+    padding: 0px;
+}
+
+.contactt label
+ {
+    font-size: 1.1rem; /* Slightly larger font for better readability */
+}
+ 
+}
