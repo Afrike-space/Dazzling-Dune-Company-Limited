@@ -493,24 +493,25 @@ gap:10px;
 
     .contact {
         background-color:transparent;
-      gap: 15px; /* Adjust spacing between items */
+      gap: 5px; /* Adjust spacing between items */
       justify-content: flex-start;
       display: flex;
       flex-direction: column; /* Stack items vertically */
       flex-wrap: nowrap; /* Not needed, but good for clarity */
       width: 100%;
       height: auto;
+      margin-bottom: 10px;
     }
   
     .contactt {
       width: 100%; /* Full width for stacking */
-      background-color:transparent;
+      background-color:transparent;;
       padding: 0px;
-      margin-top: 10px; /* Optional - let gap handle spacing */
+      margin-top: 5px; /* Optional - let gap handle spacing */
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
   
     .contactt label {
