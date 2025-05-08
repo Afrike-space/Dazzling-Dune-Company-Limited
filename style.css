@@ -419,7 +419,7 @@ gap:25px;
 
 .contact
 {
-    background-color:transparent;
+    background-color:red;
 gap:10px;
  justify-content: flex-start;   
  flex-wrap: nowrap;
@@ -458,7 +458,7 @@ gap:10px;
         flex-direction: row;
         flex-wrap: nowrap; /* Prevent wrapping */
         gap: 15px;
-        background-color:green;
+        background-color:transparent;
     }
 
     .Sublist {
@@ -487,26 +487,30 @@ gap:10px;
     background-color:transparent;
 }
 }
+
+
 @media (max-width: 480px) {
 
     .contact {
-      background-color: transparent;
+        background-color:transparent;
       gap: 15px; /* Adjust spacing between items */
       justify-content: flex-start;
       display: flex;
       flex-direction: column; /* Stack items vertically */
       flex-wrap: nowrap; /* Not needed, but good for clarity */
       width: 100%;
+      height: auto;
     }
   
     .contactt {
       width: 100%; /* Full width for stacking */
-      background-color: transparent;
-      padding: 5px;
-      margin-top: 0; /* Optional - let gap handle spacing */
+      background-color:transparent;
+      padding: 0px;
+      margin-top: 10px; /* Optional - let gap handle spacing */
       display: flex;
       align-items: center;
       gap: 10px;
+      margin-bottom: 10px;
     }
   
     .contactt label {
